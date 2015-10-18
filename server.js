@@ -23,6 +23,6 @@ server.register({
 });
 
 server.start(function() {
-	console.log('Motivational is running');
+    console.log('Motivational is running');
 });
 
