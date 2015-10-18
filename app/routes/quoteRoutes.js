@@ -2,12 +2,12 @@ var quoteController = require('../controllers/quoteController');
 var Joi = require('joi');
 
 var paramValidate = {
-	id: Joi.number().integer().min(1)
+    id: Joi.number().integer().min(1)
 };
 
 var payloadValidate = {
-	author: Joi.string().required(),
-	text: Joi.string().required()
+    author: Joi.string().required(),
+    text: Joi.string().required()
 };
 
 module.exports = [
@@ -23,8 +23,8 @@ module.exports = [
         path: '/quote/{id}',
         config : {
             validate: {
-    			params: paramValidate
-    		},
+                params: paramValidate
+            },
             handler: quoteController.show
         }
     },
@@ -33,11 +33,11 @@ module.exports = [
         path: '/quote',
         config: {
             payload: {
-    			allow: 'application/json'
-    		},
-    		validate: {
-    			payload: payloadValidate
-    		},
+                allow: 'application/json'
+            },
+            validate: {
+                payload: payloadValidate
+            },
             handler: quoteController.create
         }
     },
@@ -46,12 +46,12 @@ module.exports = [
         path: '/quote/{id}',
         config: {
             payload: {
-    			allow: 'application/json'
-    		},
-    		validate: {
+                allow: 'application/json'
+            },
+            validate: {
     		    params: paramValidate,
-    			payload: payloadValidate
-    		},
+                payload: payloadValidate
+            },
             handler: quoteController.update
         }
     },
@@ -60,11 +60,11 @@ module.exports = [
         path: '/quote/{id}',
         config: {
             payload: {
-    			allow: 'application/json'
-    		},
-    		validate: {
-    			params: paramValidate
-    		},
+                allow: 'application/json'
+            },
+            validate: {
+                params: paramValidate
+            },
             handler: quoteController.destroy
         }
     }
