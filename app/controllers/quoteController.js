@@ -68,5 +68,5 @@ var quotes = [
     }
 ];
 
-module.exports = quoteController; 
+module.exports = quoteController;
 
